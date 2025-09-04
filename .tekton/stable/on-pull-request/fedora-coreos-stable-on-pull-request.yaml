@@ -40,6 +40,10 @@ spec:
     - linux/arm64
     - linux/s390x
     - linux/ppc64le
+  - name: hermetic
+    value: true
+  - name: prefetch-input
+    value: '[{"type": "rpm", "path": ".", "options": {"dnf": {"fedora-coreos-pool": {"gpgcheck": "0"}}}}]'
   - name: image-expires-after
     value: 5d
   pipelineRef:
