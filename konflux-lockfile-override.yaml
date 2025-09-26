@@ -1,0 +1,33 @@
+# This file will be merged with 'rpms.lock.yaml' which provides the RPMs
+# to konflux hermetic build environnement.
+# e.g. to get rpm-ostree from the fedora-coreos-continuous repo:
+# for arch in 'x86_64' 'aarch64' 'ppc64le' 's390x';
+#    do dnf repoquery rpm-ostree-2025.11 --disablerepo='*' --enablerepo f42-coreos-continuous \
+#          --location --forcearch $arch --quiet \
+#    ;done
+arches:
+  - arch: aarch64
+    packages:
+      # rpm-ostree 2025.11 for buildroot-prep
+      - repoid: fedora-coreos-continuous
+        url: https://kojipkgs.fedoraproject.org/repos-dist/f42-coreos-continuous/latest/aarch64/Packages/r/rpm-ostree-2025.11-1.fc42.aarch64.rpm
+      - repoid: fedora-coreos-continuous
+        url: https://kojipkgs.fedoraproject.org/repos-dist/f42-coreos-continuous/latest/aarch64/Packages/r/rpm-ostree-libs-2025.11-1.fc42.aarch64.rpm
+  - arch: s390x
+    packages:
+      - repoid: fedora-coreos-continuous
+        url: https://kojipkgs.fedoraproject.org/repos-dist/f42-coreos-continuous/latest/s390x/Packages/r/rpm-ostree-2025.11-1.fc42.s390x.rpm
+      - repoid: fedora-coreos-continuous
+        url: https://kojipkgs.fedoraproject.org/repos-dist/f42-coreos-continuous/latest/s390x/Packages/r/rpm-ostree-libs-2025.11-1.fc42.s390x.rpm
+  - arch: ppc64le
+    packages:
+      - repoid: fedora-coreos-continuous
+        url: https://kojipkgs.fedoraproject.org/repos-dist/f42-coreos-continuous/latest/ppc64le/Packages/r/rpm-ostree-2025.11-1.fc42.ppc64le.rpm
+      - repoid: fedora-coreos-continuous
+        url: https://kojipkgs.fedoraproject.org/repos-dist/f42-coreos-continuous/latest/ppc64le/Packages/r/rpm-ostree-libs-2025.11-1.fc42.ppc64le.rpm
+  - arch: x86_64
+    packages:
+      - repoid: fedora-coreos-continuous
+        url: https://kojipkgs.fedoraproject.org/repos-dist/f42-coreos-continuous/latest/x86_64/Packages/r/rpm-ostree-2025.11-1.fc42.x86_64.rpm
+      - repoid: fedora-coreos-continuous
+        url: https://kojipkgs.fedoraproject.org/repos-dist/f42-coreos-continuous/latest/x86_64/Packages/r/rpm-ostree-libs-2025.11-1.fc42.x86_64.rpm
