@@ -17,5 +17,5 @@ fi
 
 # make sure we have https://github.com/coreos/rpm-ostree/pull/5454
 if ! rpm-ostree compose build-chunked-oci -h | grep -q -- --label; then
-    sudo dnf update rpm-ostree -y --repo fedora-coreos-continuous --releasever "$VERSION_ID"
+    sudo dnf update rpm-ostree --nogpgcheck -y --repo fedora-coreos-continuous --releasever "$VERSION_ID"
 fi
